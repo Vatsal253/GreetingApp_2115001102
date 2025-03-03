@@ -11,5 +11,9 @@ namespace RepositoryLayer.Services
 {
     public class GreetingRL : IGreetingRL
     {
+        public string Greeting(string greet)
+        {
+            return greet ;
+        }
     }
 }

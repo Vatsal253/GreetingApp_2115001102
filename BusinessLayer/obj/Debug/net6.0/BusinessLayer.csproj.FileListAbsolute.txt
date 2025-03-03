@@ -15,3 +15,21 @@ C:\Users\Vatsal Jain\source\repos\HelloGreetingApplication\BusinessLayer\obj\Deb
 C:\Users\Vatsal Jain\source\repos\HelloGreetingApplication\BusinessLayer\obj\Debug\net6.0\refint\BusinessLayer.dll
 C:\Users\Vatsal Jain\source\repos\HelloGreetingApplication\BusinessLayer\obj\Debug\net6.0\BusinessLayer.pdb
 C:\Users\Vatsal Jain\source\repos\HelloGreetingApplication\BusinessLayer\obj\Debug\net6.0\ref\BusinessLayer.dll
+D:\clone\GreetingApp_2115001102\BusinessLayer\bin\Debug\net6.0\BusinessLayer.deps.json
+D:\clone\GreetingApp_2115001102\BusinessLayer\bin\Debug\net6.0\BusinessLayer.dll
+D:\clone\GreetingApp_2115001102\BusinessLayer\bin\Debug\net6.0\BusinessLayer.pdb
+D:\clone\GreetingApp_2115001102\BusinessLayer\bin\Debug\net6.0\ModelLayer.dll
+D:\clone\GreetingApp_2115001102\BusinessLayer\bin\Debug\net6.0\RepositoryLayer.dll
+D:\clone\GreetingApp_2115001102\BusinessLayer\bin\Debug\net6.0\ModelLayer.pdb
+D:\clone\GreetingApp_2115001102\BusinessLayer\bin\Debug\net6.0\RepositoryLayer.pdb
+D:\clone\GreetingApp_2115001102\BusinessLayer\obj\Debug\net6.0\BusinessLayer.csproj.AssemblyReference.cache
+D:\clone\GreetingApp_2115001102\BusinessLayer\obj\Debug\net6.0\BusinessLayer.GeneratedMSBuildEditorConfig.editorconfig
+D:\clone\GreetingApp_2115001102\BusinessLayer\obj\Debug\net6.0\BusinessLayer.AssemblyInfoInputs.cache
+D:\clone\GreetingApp_2115001102\BusinessLayer\obj\Debug\net6.0\BusinessLayer.AssemblyInfo.cs
+D:\clone\GreetingApp_2115001102\BusinessLayer\obj\Debug\net6.0\BusinessLayer.csproj.CoreCompileInputs.cache
+D:\clone\GreetingApp_2115001102\BusinessLayer\obj\Debug\net6.0\BusinessLayer.sourcelink.json
+D:\clone\GreetingApp_2115001102\BusinessLayer\obj\Debug\net6.0\Business.EA331CBA.Up2Date
+D:\clone\GreetingApp_2115001102\BusinessLayer\obj\Debug\net6.0\BusinessLayer.dll
+D:\clone\GreetingApp_2115001102\BusinessLayer\obj\Debug\net6.0\refint\BusinessLayer.dll
+D:\clone\GreetingApp_2115001102\BusinessLayer\obj\Debug\net6.0\BusinessLayer.pdb
+D:\clone\GreetingApp_2115001102\BusinessLayer\obj\Debug\net6.0\ref\BusinessLayer.dll

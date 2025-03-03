@@ -10,9 +10,19 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer.Services
 {
-    public class GreetingBL: IGreetingBL
+    public class GreetingBL : IGreetingBL
     {
-       
+        private readonly IGreetingRL _greetingRL;
+        public GreetingBL(IGreetingRL greetingRL)
+        {
+            _greetingRL = greetingRL;
+
+        }
+        public string greeting(string greet)
+        {
+            return  _greetingRL.Greeting(greet);
+        }
+
     }
 }
     

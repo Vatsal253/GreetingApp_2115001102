@@ -586,11 +586,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Vatsal Jain\\source\\repos\\HelloGreetingApplication\\BusinessLayer\\BusinessLayer.csproj",
+      "projectUniqueName": "D:\\clone\\GreetingApp_2115001102\\BusinessLayer\\BusinessLayer.csproj",
       "projectName": "BusinessLayer",
-      "projectPath": "C:\\Users\\Vatsal Jain\\source\\repos\\HelloGreetingApplication\\BusinessLayer\\BusinessLayer.csproj",
+      "projectPath": "D:\\clone\\GreetingApp_2115001102\\BusinessLayer\\BusinessLayer.csproj",
       "packagesPath": "C:\\Users\\Vatsal Jain\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Vatsal Jain\\source\\repos\\HelloGreetingApplication\\BusinessLayer\\obj\\",
+      "outputPath": "D:\\clone\\GreetingApp_2115001102\\BusinessLayer\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -612,11 +612,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\Vatsal Jain\\source\\repos\\HelloGreetingApplication\\ModelLayer\\ModelLayer.csproj": {
-              "projectPath": "C:\\Users\\Vatsal Jain\\source\\repos\\HelloGreetingApplication\\ModelLayer\\ModelLayer.csproj"
+            "D:\\clone\\GreetingApp_2115001102\\ModelLayer\\ModelLayer.csproj": {
+              "projectPath": "D:\\clone\\GreetingApp_2115001102\\ModelLayer\\ModelLayer.csproj"
             },
-            "C:\\Users\\Vatsal Jain\\source\\repos\\HelloGreetingApplication\\RepositoryLayer\\RepositoryLayer.csproj": {
-              "projectPath": "C:\\Users\\Vatsal Jain\\source\\repos\\HelloGreetingApplication\\RepositoryLayer\\RepositoryLayer.csproj"
+            "D:\\clone\\GreetingApp_2115001102\\RepositoryLayer\\RepositoryLayer.csproj": {
+              "projectPath": "D:\\clone\\GreetingApp_2115001102\\RepositoryLayer\\RepositoryLayer.csproj"
             }
           }
         }

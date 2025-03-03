@@ -60,15 +60,31 @@
   {
     "ContainingType": "HelloGreetingApplication.Controllers.HelloGreetingController",
     "Method": "Delete",
-    "RelativePath": "HelloGreeting",
+    "RelativePath": "HelloGreeting/{key}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "requestModel",
-        "Type": "ModelLayer.Model.RequestModel",
+        "Name": "key",
+        "Type": "System.String",
         "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HelloGreetingApplication.Controllers.HelloGreetingController",
+    "Method": "GetGreeting",
+    "RelativePath": "HelloGreeting/GetGreeting",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "greet",
+        "Type": "System.String",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []

@@ -10,3 +10,16 @@ C:\Users\Vatsal Jain\source\repos\HelloGreetingApplication\ModelLayer\obj\Debug\
 C:\Users\Vatsal Jain\source\repos\HelloGreetingApplication\ModelLayer\obj\Debug\net6.0\ModelLayer.pdb
 C:\Users\Vatsal Jain\source\repos\HelloGreetingApplication\ModelLayer\obj\Debug\net6.0\ref\ModelLayer.dll
 C:\Users\Vatsal Jain\source\repos\HelloGreetingApplication\ModelLayer\obj\Debug\net6.0\ModelLayer.csproj.AssemblyReference.cache
+D:\clone\GreetingApp_2115001102\ModelLayer\bin\Debug\net6.0\ModelLayer.deps.json
+D:\clone\GreetingApp_2115001102\ModelLayer\bin\Debug\net6.0\ModelLayer.dll
+D:\clone\GreetingApp_2115001102\ModelLayer\bin\Debug\net6.0\ModelLayer.pdb
+D:\clone\GreetingApp_2115001102\ModelLayer\obj\Debug\net6.0\ModelLayer.csproj.AssemblyReference.cache
+D:\clone\GreetingApp_2115001102\ModelLayer\obj\Debug\net6.0\ModelLayer.GeneratedMSBuildEditorConfig.editorconfig
+D:\clone\GreetingApp_2115001102\ModelLayer\obj\Debug\net6.0\ModelLayer.AssemblyInfoInputs.cache
+D:\clone\GreetingApp_2115001102\ModelLayer\obj\Debug\net6.0\ModelLayer.AssemblyInfo.cs
+D:\clone\GreetingApp_2115001102\ModelLayer\obj\Debug\net6.0\ModelLayer.csproj.CoreCompileInputs.cache
+D:\clone\GreetingApp_2115001102\ModelLayer\obj\Debug\net6.0\ModelLayer.sourcelink.json
+D:\clone\GreetingApp_2115001102\ModelLayer\obj\Debug\net6.0\ModelLayer.dll
+D:\clone\GreetingApp_2115001102\ModelLayer\obj\Debug\net6.0\refint\ModelLayer.dll
+D:\clone\GreetingApp_2115001102\ModelLayer\obj\Debug\net6.0\ModelLayer.pdb
+D:\clone\GreetingApp_2115001102\ModelLayer\obj\Debug\net6.0\ref\ModelLayer.dll

@@ -1,4 +1,5 @@
 using System.Security.Cryptography.X509Certificates;
+using BusinessLayer.Interface;
 using Microsoft.AspNetCore.Mvc;
 using ModelLayer.Model;
 using NLog;
@@ -11,13 +12,15 @@ namespace HelloGreetingApplication.Controllers
     public class HelloGreetingController : ControllerBase
     {
         private static readonly Logger _logger = LogManager.GetCurrentClassLogger();
+        private readonly IGreetingBL _greetingBL;
 
-        public HelloGreetingController()
+        public HelloGreetingController(IGreetingBL greetingBL)
         {
-            //_logger = logger;
+            _greetingBL = greetingBL;
             _logger.Info("Logger has been integrated");
-
         }
+
+       
 
         [HttpGet]
         public IActionResult Get()
@@ -90,6 +93,24 @@ namespace HelloGreetingApplication.Controllers
             responseModel.Data = null;
             return Ok(responseModel);
         }
+        [HttpGet]
+        [Route("GetGreeting")]
+        public IActionResult GetGreeting(string greet)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(greet))
+                {
+                    return BadRequest("Input Cannot be Empty!");
+                }
 
+                string result = _greetingBL.greeting(greet);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, "Something went wrong: " + ex.Message);
+            }
+        }
     }
 }
