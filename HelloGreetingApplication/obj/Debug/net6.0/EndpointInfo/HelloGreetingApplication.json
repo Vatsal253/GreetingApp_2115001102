@@ -133,7 +133,14 @@
         ],
         "parameters": [
           {
-            "name": "greet",
+            "name": "firstName",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "lastName",
             "in": "query",
             "schema": {
               "type": "string"

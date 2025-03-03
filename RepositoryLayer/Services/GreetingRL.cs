@@ -1,9 +1,5 @@
 ﻿using RepositoryLayer.Interface;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using ModelLayer.Model;
 using NLog;
 
@@ -11,9 +7,36 @@ namespace RepositoryLayer.Services
 {
     public class GreetingRL : IGreetingRL
     {
-        public string Greeting(string greet)
+        private static readonly Logger _logger = LogManager.GetCurrentClassLogger();
+        /// <summary>
+        /// Takes input from user
+        /// </summary>
+        /// <param name="firstName"></param>
+        /// <param name="lastName"></param>
+        /// <returns></returns>
+        public string Greeting(string firstName, string lastName)
         {
-            return greet ;
+            string greetingMessage = string.Empty;
+
+            if (!string.IsNullOrEmpty(firstName) && !string.IsNullOrEmpty(lastName))
+            {
+                greetingMessage = $"Hello {firstName} {lastName}";
+            }
+            else if (!string.IsNullOrEmpty(firstName))
+            {
+                greetingMessage = $"Hello {firstName}";
+            }
+            else if (!string.IsNullOrEmpty(lastName))
+            {
+                greetingMessage = $"Hello {lastName}";
+            }
+            else
+            {
+                greetingMessage = "Hello World";
+            }
+
+            _logger.Info($"Generated Greeting: {greetingMessage}");
+            return greetingMessage;
         }
     }
 }

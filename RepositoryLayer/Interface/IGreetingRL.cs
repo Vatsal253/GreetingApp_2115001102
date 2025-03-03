@@ -9,7 +9,8 @@ namespace RepositoryLayer.Interface
 {
     public interface IGreetingRL
     {
-        public string Greeting(string greet);
+        public string Greeting(string firstName, string lastName);
+
 
     }
 }

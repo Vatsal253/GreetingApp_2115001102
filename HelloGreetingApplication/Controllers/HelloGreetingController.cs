@@ -93,24 +93,52 @@ namespace HelloGreetingApplication.Controllers
             responseModel.Data = null;
             return Ok(responseModel);
         }
+        /// <summary>
+        /// Returns output according to user's command
+        /// </summary>
+        /// <param name="firstName"></param>
+        /// <param name="lastName"></param>
+        /// <returns></returns>
         [HttpGet]
         [Route("GetGreeting")]
-        public IActionResult GetGreeting(string greet)
+        public IActionResult GetGreeting(string? firstName, string? lastName)
         {
             try
             {
-                if (string.IsNullOrEmpty(greet))
+                ResponseModel<string> responseModel = new ResponseModel<string>();
+                string greetingMessage = string.Empty;
+
+                if (!string.IsNullOrEmpty(firstName) && !string.IsNullOrEmpty(lastName))
                 {
-                    return BadRequest("Input Cannot be Empty!");
+                    greetingMessage = $"Hello {firstName} {lastName}";
+                }
+                else if (!string.IsNullOrEmpty(firstName))
+                {
+                    greetingMessage = $"Hello {firstName}";
+                }
+                else if (!string.IsNullOrEmpty(lastName))
+                {
+                    greetingMessage = $"Hello {lastName}";
+                }
+                else
+                {
+                    greetingMessage = "Hello World";
                 }
 
-                string result = _greetingBL.greeting(greet);
-                return Ok(result);
+                responseModel.Success = true;
+                responseModel.Message = "Greeting Generated Successfully";
+                responseModel.Data = greetingMessage;
+
+                _logger.Info($"Greeting Message: {greetingMessage}");
+
+                return Ok(responseModel);
             }
             catch (Exception ex)
             {
+                _logger.Error($"Exception Occurred: {ex.Message}");
                 return StatusCode(500, "Something went wrong: " + ex.Message);
             }
         }
+
     }
 }

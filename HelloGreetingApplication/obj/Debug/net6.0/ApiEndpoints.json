@@ -82,7 +82,12 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "greet",
+        "Name": "firstName",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "lastName",
         "Type": "System.String",
         "IsRequired": false
       }
