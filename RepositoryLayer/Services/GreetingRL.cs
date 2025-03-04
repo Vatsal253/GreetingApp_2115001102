@@ -69,6 +69,11 @@ namespace RepositoryLayer.Services
             }
             return null;
         }
+        public List<GreetingEntity> GetAllGreetings()
+        {
+            return _context.GreetMessages.ToList();  // Fetching All Data from Database
+        }
+
 
 
     }
