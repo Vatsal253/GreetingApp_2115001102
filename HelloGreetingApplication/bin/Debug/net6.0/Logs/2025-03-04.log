@@ -427,3 +427,48 @@ FROM [GreetMessages] AS [g]
 2025-03-04 23:13:54.1151 | Info | Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker | Executed action HelloGreetingApplication.Controllers.HelloGreetingController.GetAllGreetings (HelloGreetingApplication) in 9672.3185ms 
 2025-03-04 23:13:54.1151 | Info | Microsoft.AspNetCore.Routing.EndpointMiddleware | Executed endpoint 'HelloGreetingApplication.Controllers.HelloGreetingController.GetAllGreetings (HelloGreetingApplication)' 
 2025-03-04 23:13:54.1380 | Info | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7090/HelloGreeting/GetAllGreetings - - - 200 - application/json;+charset=utf-8 9760.5299ms 
+2025-03-04 23:27:53.8007 | Info | Microsoft.Hosting.Lifetime | Now listening on: https://localhost:7090 
+2025-03-04 23:27:53.8427 | Info | Microsoft.Hosting.Lifetime | Now listening on: http://localhost:5085 
+2025-03-04 23:27:53.9143 | Info | Microsoft.Hosting.Lifetime | Application started. Press Ctrl+C to shut down. 
+2025-03-04 23:27:53.9143 | Info | Microsoft.Hosting.Lifetime | Hosting environment: Development 
+2025-03-04 23:27:53.9143 | Info | Microsoft.Hosting.Lifetime | Content root path: D:\clone\GreetingApp_2115001102\HelloGreetingApplication\ 
+2025-03-04 23:27:54.2632 | Info | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7090/swagger/index.html - - 
+2025-03-04 23:27:54.6263 | Info | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7090/swagger/index.html - - - 200 - text/html;charset=utf-8 367.8742ms 
+2025-03-04 23:27:54.6263 | Info | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7090/swagger/index.js - - 
+2025-03-04 23:27:54.6263 | Info | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7090/_framework/aspnetcore-browser-refresh.js - - 
+2025-03-04 23:27:54.6421 | Info | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7090/swagger/index.js - - - 200 - application/javascript;charset=utf-8 11.3682ms 
+2025-03-04 23:27:54.6421 | Info | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7090/_vs/browserLink - - 
+2025-03-04 23:27:54.6421 | Info | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7090/_framework/aspnetcore-browser-refresh.js - - - 200 12380 application/javascript;+charset=utf-8 23.0592ms 
+2025-03-04 23:27:54.7216 | Info | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7090/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 75.3611ms 
+2025-03-04 23:27:54.7689 | Info | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7090/swagger/v1/swagger.json - - 
+2025-03-04 23:27:54.7766 | Info | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7090/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 7.6879ms 
+2025-03-04 23:28:51.1655 | Info | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 PUT https://localhost:7090/HelloGreeting/EditGreeting/1 application/json 42 
+2025-03-04 23:28:51.1853 | Info | Microsoft.AspNetCore.Routing.EndpointMiddleware | Executing endpoint 'HelloGreetingApplication.Controllers.HelloGreetingController.EditGreeting (HelloGreetingApplication)' 
+2025-03-04 23:28:51.2060 | Info | Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker | Route matched with {action = "EditGreeting", controller = "HelloGreeting"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult EditGreeting(Int32, ModelLayer.Model.GreetingModel) on controller HelloGreetingApplication.Controllers.HelloGreetingController (HelloGreetingApplication). 
+2025-03-04 23:28:54.3603 | Info | HelloGreetingApplication.Controllers.HelloGreetingController | Logger has been integrated 
+2025-03-04 23:28:55.1349 | Info | Microsoft.EntityFrameworkCore.Infrastructure | Entity Framework Core 6.0.36 initialized 'GreetingContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.36' with options: None 
+2025-03-04 23:28:58.4064 | Info | Microsoft.EntityFrameworkCore.Database.Command | Executed DbCommand (94ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [g].[id], [g].[Greeting]
+FROM [GreetMessages] AS [g]
+WHERE [g].[id] = @__id_0 
+2025-03-04 23:28:58.7197 | Info | Microsoft.EntityFrameworkCore.Database.Command | Executed DbCommand (17ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [GreetMessages] SET [Greeting] = @p0
+WHERE [id] = @p1;
+SELECT @@ROWCOUNT; 
+2025-03-04 23:28:58.7465 | Info | Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor | Executing OkObjectResult, writing value of type 'ModelLayer.Model.ResponseModel`1[[ModelLayer.Model.GreetingModel, ModelLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'. 
+2025-03-04 23:28:58.7640 | Info | Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker | Executed action HelloGreetingApplication.Controllers.HelloGreetingController.EditGreeting (HelloGreetingApplication) in 7545.4004ms 
+2025-03-04 23:28:58.7640 | Info | Microsoft.AspNetCore.Routing.EndpointMiddleware | Executed endpoint 'HelloGreetingApplication.Controllers.HelloGreetingController.EditGreeting (HelloGreetingApplication)' 
+2025-03-04 23:28:58.7751 | Info | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 PUT https://localhost:7090/HelloGreeting/EditGreeting/1 application/json 42 - 200 - application/json;+charset=utf-8 7611.6670ms 
+2025-03-04 23:29:13.3379 | Info | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7090/HelloGreeting/GetAllGreetings - - 
+2025-03-04 23:29:13.3379 | Info | Microsoft.AspNetCore.Routing.EndpointMiddleware | Executing endpoint 'HelloGreetingApplication.Controllers.HelloGreetingController.GetAllGreetings (HelloGreetingApplication)' 
+2025-03-04 23:29:13.3459 | Info | Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker | Route matched with {action = "GetAllGreetings", controller = "HelloGreeting"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAllGreetings() on controller HelloGreetingApplication.Controllers.HelloGreetingController (HelloGreetingApplication). 
+2025-03-04 23:29:13.3459 | Info | HelloGreetingApplication.Controllers.HelloGreetingController | Logger has been integrated 
+2025-03-04 23:29:13.3769 | Info | Microsoft.EntityFrameworkCore.Infrastructure | Entity Framework Core 6.0.36 initialized 'GreetingContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.36' with options: None 
+2025-03-04 23:29:13.4026 | Info | Microsoft.EntityFrameworkCore.Database.Command | Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [g].[id], [g].[Greeting]
+FROM [GreetMessages] AS [g] 
+2025-03-04 23:29:13.4026 | Info | Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor | Executing OkObjectResult, writing value of type 'ModelLayer.Model.ResponseModel`1[[System.Collections.Generic.List`1[[ModelLayer.Model.GreetingModel, ModelLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'. 
+2025-03-04 23:29:13.4026 | Info | Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker | Executed action HelloGreetingApplication.Controllers.HelloGreetingController.GetAllGreetings (HelloGreetingApplication) in 58.3804ms 
+2025-03-04 23:29:13.4026 | Info | Microsoft.AspNetCore.Routing.EndpointMiddleware | Executed endpoint 'HelloGreetingApplication.Controllers.HelloGreetingController.GetAllGreetings (HelloGreetingApplication)' 
+2025-03-04 23:29:13.4026 | Info | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7090/HelloGreeting/GetAllGreetings - - - 200 - application/json;+charset=utf-8 67.5918ms 
