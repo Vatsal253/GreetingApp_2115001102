@@ -4,6 +4,7 @@ using ModelLayer.Model;
 using NLog;
 using RepositoryLayer.Context;
 using RepositoryLayer.Entity;
+using Microsoft.EntityFrameworkCore;
 
 namespace RepositoryLayer.Services
 {
@@ -54,5 +55,21 @@ namespace RepositoryLayer.Services
             _logger.Info($"Generated Greeting: {greetingMessage}");
             return greetingMessage;
         }
+        public GreetingModel GetGreetingById(int ID)
+        {
+            var entity = _context.GreetMessages.FirstOrDefault(g => g.id == ID);
+
+            if (entity != null)
+            {
+                return new GreetingModel()
+                {
+                    Id = entity.id,
+                    GreetMessage = entity.Greeting
+                };
+            }
+            return null;
+        }
+
+
     }
 }
