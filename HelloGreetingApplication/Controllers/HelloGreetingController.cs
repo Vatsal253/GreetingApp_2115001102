@@ -1,4 +1,3 @@
-using System.Security.Cryptography.X509Certificates;
 using BusinessLayer.Interface;
 using Microsoft.AspNetCore.Mvc;
 using ModelLayer.Model;
@@ -119,7 +118,39 @@ namespace HelloGreetingApplication.Controllers
             responseModel.Message = "Greet Message With Name";
             responseModel.Data = result;
             return Ok(responseModel);
+
         }
+        /// <summary>
+        /// Take input greet from user and stores into database
+        /// </summary>
+        /// <param name="greetModel"></param>
+        /// <returns></returns>
+        [HttpPost("greetmessage")]
+        public IActionResult GreetMessage(GreetingModel greetModel)
+        {
+            var response = new ResponseModel<string>();
+            try
+            {
+                bool isMessageGrret = _greetingBL.GreetMessage(greetModel);
+                if (isMessageGrret)
+                {
+                    response.Success = true;
+                    response.Message = "Greet Message!";
+                    response.Data = greetModel.ToString();
+                    return Ok(response);
+                }
+                response.Success = false;
+                response.Message = "Greet Message Already Exist.";
+                return Conflict(response);
+            }
+            catch (Exception ex)
+            {
+                response.Success = false;
+                response.Message = $"An error occurred: {ex.Message}";
+                return StatusCode(500, response);
+            }
+        }
+
 
     }
 }

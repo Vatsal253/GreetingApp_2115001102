@@ -5,8 +5,14 @@ using BusinessLayer.Interface;
 using BusinessLayer.Services;
 using RepositoryLayer.Interface;
 using RepositoryLayer.Services;
+using Microsoft.EntityFrameworkCore;
+using RepositoryLayer.Context;
+
+
 
 var builder = WebApplication.CreateBuilder(args);
+var connectionString = builder.Configuration.GetConnectionString("SqlConnection");//used for connection to database
+builder.Services.AddDbContext<GreetingContext>(options => options.UseSqlServer(connectionString));
 
 // Add services to the container.
 

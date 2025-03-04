@@ -3,7 +3,7 @@ using ModelLayer.Model;
 using NLog;
 using RepositoryLayer.Interface;
 using System;
-using System.Net.Security;
+
 
 namespace BusinessLayer.Services
 {
@@ -25,6 +25,10 @@ namespace BusinessLayer.Services
         public string greeting(UserModel userModel)
         {
             return _greetingRL.Greeting(userModel);
+        }
+        public bool GreetMessage(GreetingModel greetModel)
+        {
+            return _greetingRL.GreetMessage(greetModel);
         }
     }
 }
