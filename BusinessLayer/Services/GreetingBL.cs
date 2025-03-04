@@ -3,6 +3,7 @@ using ModelLayer.Model;
 using NLog;
 using RepositoryLayer.Interface;
 using System;
+using System.Net.Security;
 
 namespace BusinessLayer.Services
 {
@@ -15,30 +16,16 @@ namespace BusinessLayer.Services
         {
             _greetingRL = greetingRL;
         }
-        /// <summary>
-        /// Checks if the input is null  or not 
-        /// </summary>
-        /// <param name="firstName"></param>
-        /// <param name="lastName"></param>
-        /// <returns></returns>
-        public string greeting(string firstName, string lastName)
+        public string GetGreet()
         {
-            try
-            {
-                if (string.IsNullOrEmpty(firstName) && string.IsNullOrEmpty(lastName))
-                {
-                    _logger.Warn("Both First Name and Last Name are empty. Returning default greeting.");
-                    return _greetingRL.Greeting(null, null);
-                }
+            return "Hello! World";
+        }
+       
 
-                _logger.Info($"Generating greeting for First Name: {firstName}, Last Name: {lastName}");
-                return _greetingRL.Greeting(firstName, lastName);
-            }
-            catch (Exception ex)
-            {
-                _logger.Error(ex, "An error occurred while generating greeting.");
-                throw;
-            }
+        public string greeting(UserModel userModel)
+        {
+            return _greetingRL.Greeting(userModel);
         }
     }
 }
+

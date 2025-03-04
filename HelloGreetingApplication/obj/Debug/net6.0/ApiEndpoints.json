@@ -75,21 +75,36 @@
   },
   {
     "ContainingType": "HelloGreetingApplication.Controllers.HelloGreetingController",
-    "Method": "GetGreeting",
+    "Method": "GetHello",
     "RelativePath": "HelloGreeting/GetGreeting",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.String",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "HelloGreetingApplication.Controllers.HelloGreetingController",
+    "Method": "PostGreeting",
+    "RelativePath": "HelloGreeting/PostGreet",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
     "Parameters": [
       {
-        "Name": "firstName",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "lastName",
-        "Type": "System.String",
-        "IsRequired": false
+        "Name": "userModel",
+        "Type": "ModelLayer.Model.UserModel",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []

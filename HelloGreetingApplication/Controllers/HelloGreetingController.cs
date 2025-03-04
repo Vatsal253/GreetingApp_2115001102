@@ -94,50 +94,31 @@ namespace HelloGreetingApplication.Controllers
             return Ok(responseModel);
         }
         /// <summary>
-        /// Returns output according to user's command
+        /// To print Hello! World
         /// </summary>
-        /// <param name="firstName"></param>
-        /// <param name="lastName"></param>
         /// <returns></returns>
         [HttpGet]
-        [Route("GetGreeting")]
-        public IActionResult GetGreeting(string? firstName, string? lastName)
+        [Route ("GetGreeting")]
+        public string GetHello()
         {
-            try
-            {
-                ResponseModel<string> responseModel = new ResponseModel<string>();
-                string greetingMessage = string.Empty;
+            return _greetingBL.GetGreet();
 
-                if (!string.IsNullOrEmpty(firstName) && !string.IsNullOrEmpty(lastName))
-                {
-                    greetingMessage = $"Hello {firstName} {lastName}";
-                }
-                else if (!string.IsNullOrEmpty(firstName))
-                {
-                    greetingMessage = $"Hello {firstName}";
-                }
-                else if (!string.IsNullOrEmpty(lastName))
-                {
-                    greetingMessage = $"Hello {lastName}";
-                }
-                else
-                {
-                    greetingMessage = "Hello World";
-                }
-
-                responseModel.Success = true;
-                responseModel.Message = "Greeting Generated Successfully";
-                responseModel.Data = greetingMessage;
-
-                _logger.Info($"Greeting Message: {greetingMessage}");
-
-                return Ok(responseModel);
-            }
-            catch (Exception ex)
-            {
-                _logger.Error($"Exception Occurred: {ex.Message}");
-                return StatusCode(500, "Something went wrong: " + ex.Message);
-            }
+        }
+        /// <summary>
+        /// Takes input from user
+        /// </summary>
+        /// <param name="userModel"></param>
+        /// <returns></returns>
+        [HttpPost]
+        [Route("PostGreet")]
+        public IActionResult PostGreeting(UserModel userModel)
+        {
+            var result = _greetingBL.greeting(userModel);
+            ResponseModel<string> responseModel = new ResponseModel<string>();
+            responseModel.Success = true;
+            responseModel.Message = "Greet Message With Name";
+            responseModel.Data = result;
+            return Ok(responseModel);
         }
 
     }
