@@ -60,6 +60,16 @@ namespace BusinessLayer.Services
             }
             return null;
         }
+        public bool DeleteGreeting(int id)
+        {
+            var result = _greetingRL.DeleteGreeting(id); 
+            if (result)
+            {
+                return true; // Successfully Deleted
+            }
+            return false; // Not Found
+        }
+
 
 
 

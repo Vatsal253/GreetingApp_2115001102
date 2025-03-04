@@ -15,6 +15,7 @@ namespace RepositoryLayer.Interface
         public GreetingModel GetGreetingById(int id);
         public List<GreetingEntity> GetAllGreetings();
         public GreetingEntity EditGreeting(int id, GreetingModel greetingModel);
+        public bool DeleteGreeting(int id);
 
 
 
