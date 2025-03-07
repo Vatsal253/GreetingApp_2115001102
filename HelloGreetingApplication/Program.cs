@@ -7,6 +7,7 @@ using RepositoryLayer.Interface;
 using RepositoryLayer.Services;
 using Microsoft.EntityFrameworkCore;
 using RepositoryLayer.Context;
+using Middleware.ExceptionMiddleware;
 
 
 
@@ -38,6 +39,10 @@ var app = builder.Build();
 
 app.UseSwagger();
 app.UseSwaggerUI();
+app.UseRequestLoggerMiddleware();
+app.ConfigureExceptionMiddleware();
+
+
 
 
 // Configure the HTTP request pipeline.
