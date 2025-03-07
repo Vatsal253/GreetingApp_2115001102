@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using RepositoryLayer.Entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,5 +12,7 @@ namespace RepositoryLayer.Context
     {
         public GreetingContext(DbContextOptions<GreetingContext> options) : base(options) { }
         public virtual DbSet<Entity.GreetingEntity> GreetMessages { get; set; }
+        
+
     }
 }

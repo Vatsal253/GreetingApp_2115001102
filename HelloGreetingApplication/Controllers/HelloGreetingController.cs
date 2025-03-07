@@ -110,7 +110,7 @@ namespace HelloGreetingApplication.Controllers
         /// <returns></returns>
         [HttpPost]
         [Route("PostGreet")]
-        public IActionResult PostGreeting(UserModel userModel)
+        public IActionResult PostGreeting(UserNameModel userModel)
         {
             var result = _greetingBL.greeting(userModel);
             ResponseModel<string> responseModel = new ResponseModel<string>();
@@ -269,7 +269,7 @@ namespace HelloGreetingApplication.Controllers
                 return StatusCode(500, response);
             }
         }
-        
+       
 
 
 

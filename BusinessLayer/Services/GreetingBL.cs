@@ -22,7 +22,7 @@ namespace BusinessLayer.Services
         }
        
 
-        public string greeting(UserModel userModel)
+        public string greeting(UserNameModel userModel)
         {
             return _greetingRL.Greeting(userModel);
         }

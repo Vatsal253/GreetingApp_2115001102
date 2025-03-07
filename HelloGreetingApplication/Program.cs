@@ -8,12 +8,16 @@ using RepositoryLayer.Services;
 using Microsoft.EntityFrameworkCore;
 using RepositoryLayer.Context;
 using Middleware.ExceptionMiddleware;
+using BusinessLayer.Service;
+using RepositoryLayer.Service;
 
 
 
 var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("SqlConnection");//used for connection to database
 builder.Services.AddDbContext<GreetingContext>(options => options.UseSqlServer(connectionString));
+var ConnectionString = builder.Configuration.GetConnectionString("SqlConnection");//used for connection to database
+builder.Services.AddDbContext<UserContext>(options => options.UseSqlServer(ConnectionString));
 
 // Add services to the container.
 
@@ -22,6 +26,8 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IGreetingBL, GreetingBL>();
 builder.Services.AddScoped<IGreetingRL, GreetingRL>();
+builder.Services.AddScoped<IUserBL, UserBL>();
+builder.Services.AddScoped<IUserRL, UserRL>();
 
 //logger using NLog
 var logger = LogManager.Setup().LoadConfigurationFromAppSettings().GetCurrentClassLogger();
