@@ -81,9 +81,9 @@ namespace RepositoryLayer.Services
                 entity.Greeting = greetingModel.GreetMessage;
                 _context.GreetMessages.Update(entity);
                 _context.SaveChanges();
-                return entity; // Returning the updated Entity
+                return entity;
             }
-            return null; // If not found
+            return null; 
         }
         public bool DeleteGreeting(int id)
         {
@@ -92,9 +92,9 @@ namespace RepositoryLayer.Services
             {
                 _context.GreetMessages.Remove(entity);
                 _context.SaveChanges();
-                return true; // Successfully Deleted
+                return true; 
             }
-            return false; // Not Found
+            return false; 
         }
 
 

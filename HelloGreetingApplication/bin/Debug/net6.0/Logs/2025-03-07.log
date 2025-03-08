@@ -605,3 +605,88 @@ SELECT @@ROWCOUNT;
 2025-03-07 22:36:21.9229 | Info | Microsoft.AspNetCore.Routing.EndpointMiddleware | Executed endpoint 'HelloGreetingApplication.Controllers.UserController.ResetPassword (HelloGreetingApplication)' 
 2025-03-07 22:36:21.9229 | Info | Middleware.ExceptionMiddleware.RequestLoggerMiddleware | Response: 200 
 2025-03-07 22:36:21.9229 | Info | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 POST https://localhost:7090/User/ResetPassword application/json 101 - 200 - application/json;+charset=utf-8 1524.1873ms 
+2025-03-07 22:56:31.4361 | Info | Microsoft.Hosting.Lifetime | Now listening on: https://localhost:7090 
+2025-03-07 22:56:31.4816 | Info | Microsoft.Hosting.Lifetime | Now listening on: http://localhost:5085 
+2025-03-07 22:56:31.5714 | Info | Microsoft.Hosting.Lifetime | Application started. Press Ctrl+C to shut down. 
+2025-03-07 22:56:31.5714 | Info | Microsoft.Hosting.Lifetime | Hosting environment: Development 
+2025-03-07 22:56:31.5714 | Info | Microsoft.Hosting.Lifetime | Content root path: D:\clone\GreetingApp_2115001102\HelloGreetingApplication\ 
+2025-03-07 22:56:32.0697 | Info | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7090/swagger/index.html - - 
+2025-03-07 22:56:32.5557 | Info | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7090/swagger/index.html - - - 200 - text/html;charset=utf-8 473.6423ms 
+2025-03-07 22:56:32.5796 | Info | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7090/_framework/aspnetcore-browser-refresh.js - - 
+2025-03-07 22:56:32.5796 | Info | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7090/_vs/browserLink - - 
+2025-03-07 22:56:32.5796 | Info | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7090/swagger/index.js - - 
+2025-03-07 22:56:32.5993 | Info | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7090/swagger/index.js - - - 200 - application/javascript;charset=utf-8 15.8070ms 
+2025-03-07 22:56:32.5993 | Info | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7090/_framework/aspnetcore-browser-refresh.js - - - 200 12380 application/javascript;+charset=utf-8 24.6968ms 
+2025-03-07 22:56:32.6995 | Info | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7090/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 117.3323ms 
+2025-03-07 22:56:32.8162 | Info | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7090/swagger/v1/swagger.json - - 
+2025-03-07 22:56:32.8264 | Info | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7090/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 10.1819ms 
+2025-03-07 22:57:41.9055 | Info | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 POST https://localhost:7090/User/Login application/json 68 
+2025-03-07 22:57:41.9201 | Info | Middleware.ExceptionMiddleware.RequestLoggerMiddleware | Request: POST /User/Login 
+2025-03-07 22:57:41.9201 | Info | Microsoft.AspNetCore.Routing.EndpointMiddleware | Executing endpoint 'HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication)' 
+2025-03-07 22:57:41.9491 | Info | Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker | Route matched with {action = "Login", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(ModelLayer.Model.UserLogin) on controller HelloGreetingApplication.Controllers.UserController (HelloGreetingApplication). 
+2025-03-07 22:57:42.7570 | Info | HelloGreetingApplication.Controllers.UserController | User Controller initialized successfully 
+2025-03-07 22:57:43.6842 | Info | Microsoft.EntityFrameworkCore.Infrastructure | Entity Framework Core 6.0.36 initialized 'UserContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.36' with options: None 
+2025-03-07 22:57:45.7939 | Info | Microsoft.EntityFrameworkCore.Database.Command | Executed DbCommand (96ms) [Parameters=[@__email_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[Email], [u].[FirstName], [u].[LastName], [u].[Password]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__email_0 
+2025-03-07 22:57:46.0568 | Info | Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor | Executing ObjectResult, writing value of type 'ModelLayer.Model.ResponseModel`1[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'. 
+2025-03-07 22:57:46.0568 | Info | Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker | Executed action HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication) in 4113.0809ms 
+2025-03-07 22:57:46.0568 | Info | Microsoft.AspNetCore.Routing.EndpointMiddleware | Executed endpoint 'HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication)' 
+2025-03-07 22:57:46.0568 | Info | Middleware.ExceptionMiddleware.RequestLoggerMiddleware | Response: 500 
+2025-03-07 22:57:46.0773 | Info | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 POST https://localhost:7090/User/Login application/json 68 - 500 - application/json;+charset=utf-8 4171.8045ms 
+2025-03-07 22:59:05.3898 | Info | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 POST https://localhost:7090/User/ResetPassword application/json 102 
+2025-03-07 22:59:05.3966 | Info | Middleware.ExceptionMiddleware.RequestLoggerMiddleware | Request: POST /User/ResetPassword 
+2025-03-07 22:59:05.3966 | Info | Microsoft.AspNetCore.Routing.EndpointMiddleware | Executing endpoint 'HelloGreetingApplication.Controllers.UserController.ResetPassword (HelloGreetingApplication)' 
+2025-03-07 22:59:05.3966 | Info | Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker | Route matched with {action = "ResetPassword", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult ResetPassword(ModelLayer.Model.ResetPasswordModel) on controller HelloGreetingApplication.Controllers.UserController (HelloGreetingApplication). 
+2025-03-07 22:59:05.3966 | Info | HelloGreetingApplication.Controllers.UserController | User Controller initialized successfully 
+2025-03-07 22:59:05.5381 | Info | Microsoft.EntityFrameworkCore.Infrastructure | Entity Framework Core 6.0.36 initialized 'UserContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.36' with options: None 
+2025-03-07 22:59:05.5591 | Info | Microsoft.EntityFrameworkCore.Database.Command | Executed DbCommand (7ms) [Parameters=[@__email_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[Email], [u].[FirstName], [u].[LastName], [u].[Password]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__email_0 
+2025-03-07 22:59:06.0836 | Info | Microsoft.EntityFrameworkCore.Database.Command | Executed DbCommand (7ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Users] SET [Password] = @p0
+WHERE [UserId] = @p1;
+SELECT @@ROWCOUNT; 
+2025-03-07 22:59:06.1337 | Info | Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor | Executing OkObjectResult, writing value of type 'ModelLayer.Model.ResponseModel`1[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'. 
+2025-03-07 22:59:06.1337 | Info | Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker | Executed action HelloGreetingApplication.Controllers.UserController.ResetPassword (HelloGreetingApplication) in 735.2265ms 
+2025-03-07 22:59:06.1337 | Info | Microsoft.AspNetCore.Routing.EndpointMiddleware | Executed endpoint 'HelloGreetingApplication.Controllers.UserController.ResetPassword (HelloGreetingApplication)' 
+2025-03-07 22:59:06.1337 | Info | Middleware.ExceptionMiddleware.RequestLoggerMiddleware | Response: 200 
+2025-03-07 22:59:06.1337 | Info | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 POST https://localhost:7090/User/ResetPassword application/json 102 - 200 - application/json;+charset=utf-8 745.9080ms 
+2025-03-07 22:59:07.0170 | Info | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 POST https://localhost:7090/User/ResetPassword application/json 102 
+2025-03-07 22:59:07.0170 | Info | Middleware.ExceptionMiddleware.RequestLoggerMiddleware | Request: POST /User/ResetPassword 
+2025-03-07 22:59:07.0170 | Info | Microsoft.AspNetCore.Routing.EndpointMiddleware | Executing endpoint 'HelloGreetingApplication.Controllers.UserController.ResetPassword (HelloGreetingApplication)' 
+2025-03-07 22:59:07.0170 | Info | Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker | Route matched with {action = "ResetPassword", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult ResetPassword(ModelLayer.Model.ResetPasswordModel) on controller HelloGreetingApplication.Controllers.UserController (HelloGreetingApplication). 
+2025-03-07 22:59:07.0170 | Info | HelloGreetingApplication.Controllers.UserController | User Controller initialized successfully 
+2025-03-07 22:59:07.0832 | Info | Microsoft.EntityFrameworkCore.Infrastructure | Entity Framework Core 6.0.36 initialized 'UserContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.36' with options: None 
+2025-03-07 22:59:07.0832 | Info | Microsoft.EntityFrameworkCore.Database.Command | Executed DbCommand (1ms) [Parameters=[@__email_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[Email], [u].[FirstName], [u].[LastName], [u].[Password]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__email_0 
+2025-03-07 22:59:07.4008 | Info | Microsoft.EntityFrameworkCore.Database.Command | Executed DbCommand (0ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Users] SET [Password] = @p0
+WHERE [UserId] = @p1;
+SELECT @@ROWCOUNT; 
+2025-03-07 22:59:07.4008 | Info | Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor | Executing OkObjectResult, writing value of type 'ModelLayer.Model.ResponseModel`1[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'. 
+2025-03-07 22:59:07.4008 | Info | Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker | Executed action HelloGreetingApplication.Controllers.UserController.ResetPassword (HelloGreetingApplication) in 379.3829ms 
+2025-03-07 22:59:07.4008 | Info | Microsoft.AspNetCore.Routing.EndpointMiddleware | Executed endpoint 'HelloGreetingApplication.Controllers.UserController.ResetPassword (HelloGreetingApplication)' 
+2025-03-07 22:59:07.4008 | Info | Middleware.ExceptionMiddleware.RequestLoggerMiddleware | Response: 200 
+2025-03-07 22:59:07.4008 | Info | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 POST https://localhost:7090/User/ResetPassword application/json 102 - 200 - application/json;+charset=utf-8 386.8365ms 
+2025-03-07 22:59:21.2309 | Info | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 POST https://localhost:7090/User/Login application/json 68 
+2025-03-07 22:59:21.2309 | Info | Middleware.ExceptionMiddleware.RequestLoggerMiddleware | Request: POST /User/Login 
+2025-03-07 22:59:21.2309 | Info | Microsoft.AspNetCore.Routing.EndpointMiddleware | Executing endpoint 'HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication)' 
+2025-03-07 22:59:21.2309 | Info | Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker | Route matched with {action = "Login", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(ModelLayer.Model.UserLogin) on controller HelloGreetingApplication.Controllers.UserController (HelloGreetingApplication). 
+2025-03-07 22:59:21.2309 | Info | HelloGreetingApplication.Controllers.UserController | User Controller initialized successfully 
+2025-03-07 22:59:21.2309 | Info | Microsoft.EntityFrameworkCore.Infrastructure | Entity Framework Core 6.0.36 initialized 'UserContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.36' with options: None 
+2025-03-07 22:59:21.2309 | Info | Microsoft.EntityFrameworkCore.Database.Command | Executed DbCommand (0ms) [Parameters=[@__email_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[Email], [u].[FirstName], [u].[LastName], [u].[Password]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__email_0 
+2025-03-07 22:59:21.2559 | Info | Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor | Executing ObjectResult, writing value of type 'ModelLayer.Model.ResponseModel`1[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'. 
+2025-03-07 22:59:21.2559 | Info | Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker | Executed action HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication) in 24.6154ms 
+2025-03-07 22:59:21.2559 | Info | Microsoft.AspNetCore.Routing.EndpointMiddleware | Executed endpoint 'HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication)' 
+2025-03-07 22:59:21.2559 | Info | Middleware.ExceptionMiddleware.RequestLoggerMiddleware | Response: 500 
+2025-03-07 22:59:21.2559 | Info | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 POST https://localhost:7090/User/Login application/json 68 - 500 - application/json;+charset=utf-8 26.4033ms 

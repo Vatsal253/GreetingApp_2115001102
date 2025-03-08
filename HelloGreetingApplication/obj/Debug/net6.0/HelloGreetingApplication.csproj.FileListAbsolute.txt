@@ -137,3 +137,4 @@ D:\clone\GreetingApp_2115001102\HelloGreetingApplication\bin\Debug\net6.0\Newton
 D:\clone\GreetingApp_2115001102\HelloGreetingApplication\bin\Debug\net6.0\Middleware.dll
 D:\clone\GreetingApp_2115001102\HelloGreetingApplication\bin\Debug\net6.0\Middleware.pdb
 D:\clone\GreetingApp_2115001102\HelloGreetingApplication\bin\Debug\net6.0\BCrypt.Net-Next.dll
+D:\clone\GreetingApp_2115001102\HelloGreetingApplication\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

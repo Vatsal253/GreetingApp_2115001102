@@ -10,6 +10,10 @@ using RepositoryLayer.Context;
 using Middleware.ExceptionMiddleware;
 using BusinessLayer.Service;
 using RepositoryLayer.Service;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
+using HelloGreetingApplication.Helper;
 
 
 
@@ -28,10 +32,28 @@ builder.Services.AddScoped<IGreetingBL, GreetingBL>();
 builder.Services.AddScoped<IGreetingRL, GreetingRL>();
 builder.Services.AddScoped<IUserBL, UserBL>();
 builder.Services.AddScoped<IUserRL, UserRL>();
+builder.Services.AddScoped<JwtTokenHelper>();
 
 //logger using NLog
 var logger = LogManager.Setup().LoadConfigurationFromAppSettings().GetCurrentClassLogger();
 LogManager.Configuration = new XmlLoggingConfiguration("C:\\Users\\Vatsal Jain\\source\\repos\\HelloGreetingApplication\\nlog.config");
+var jwtSettings = builder.Configuration.GetSection("Jwt");
+// jwt implementation
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(options =>
+    {
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateIssuer = true,
+            ValidateAudience = true,
+            ValidateLifetime = true,
+            ValidIssuer = jwtSettings["Issuer"],
+            ValidAudience = jwtSettings["Audience"],
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSettings["Key"]))
+
+        };
+
+    });
 
 logger.Debug("init main");
 
