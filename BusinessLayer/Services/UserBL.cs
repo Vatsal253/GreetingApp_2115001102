@@ -2,7 +2,10 @@
 using ModelLayer.Model;
 using RepositoryLayer.Entity;
 using RepositoryLayer.Interface;
+using System.Net.Mail;
+using System.Net;
 using System.Security.Cryptography;
+using NLog;
 
 namespace BusinessLayer.Service
 {
@@ -12,9 +15,11 @@ namespace BusinessLayer.Service
         private const int SaltSize = 16;
         private const int HashSize = 20;
         private const int Iterations = 10000;
+        private static readonly Logger _logger = LogManager.GetCurrentClassLogger();
         public UserBL(IUserRL userRL)
         {
             _userRL = userRL;
+            
         }
 
         public bool Register(UserEntity user)
@@ -52,19 +57,62 @@ namespace BusinessLayer.Service
         }
         public bool VerifyPassword(string enteredPassword, string storedPassword)
         {
-            byte[] hashBytes = Convert.FromBase64String(storedPassword);
-            byte[] salt = new byte[SaltSize];
-            Array.Copy(hashBytes, 0, salt, 0, SaltSize);
-            using (var pbkdf2 = new Rfc2898DeriveBytes(enteredPassword, salt, Iterations))
+            try
             {
-                byte[] hash = pbkdf2.GetBytes(HashSize);
-                for (int i = 0; i < HashSize; i++)
+                byte[] hashBytes = Convert.FromBase64String(storedPassword);
+                byte[] salt = new byte[SaltSize];
+                Array.Copy(hashBytes, 0, salt, 0, SaltSize);
+
+                using (var pbkdf2 = new Rfc2898DeriveBytes(enteredPassword, salt, Iterations))
                 {
-                    if (hashBytes[i + SaltSize] != hash[i])
-                        return false;
+                    byte[] hash = pbkdf2.GetBytes(HashSize);
+                    for (int i = 0; i < HashSize; i++)
+                    {
+                        if (hashBytes[i + SaltSize] != hash[i])
+                            return false;
+                    }
                 }
+                return true;
             }
-            return true;
+            catch (FormatException)
+            {
+                _logger.Error("Stored password format is invalid. Possible hash mismatch.");
+                return false;
+            }
         }
+
+        public bool SendResetEmail(string email, string token)
+        {
+            try
+            {
+                var fromEmail = "your-email@example.com";
+                var fromPassword = "your-email-password"; // Use environment variables for security
+                var smtpClient = new SmtpClient("smtp.your-email-provider.com")
+                {
+                    Port = 587,
+                    Credentials = new NetworkCredential(fromEmail, fromPassword),
+                    EnableSsl = true,
+                };
+
+                var resetUrl = $"https://your-frontend-app.com/reset-password?token={token}";
+                var mailMessage = new MailMessage
+                {
+                    From = new MailAddress(fromEmail),
+                    Subject = "Password Reset Request",
+                    Body = $"Click <a href='{resetUrl}'>here</a> to reset your password.",
+                    IsBodyHtml = true,
+                };
+
+                mailMessage.To.Add(email);
+                smtpClient.Send(mailMessage);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                _logger.Error($"Error in SendResetEmail: {ex.Message}");
+                return false;
+            }
+        }
+
     }
 }

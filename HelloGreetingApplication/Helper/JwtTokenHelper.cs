@@ -47,6 +47,53 @@ namespace HelloGreetingApplication.Helper
             return new JwtSecurityTokenHandler().WriteToken(token);
 
         }
+        public string GenerateResetToken(string email)
+        {
+            var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));
+            var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
+
+            var claims = new[]
+            {
+        new Claim(ClaimTypes.Email, email)
+    };
+
+            var token = new JwtSecurityToken(
+                issuer: _configuration["Jwt:Issuer"],
+                audience: _configuration["Jwt:Audience"],
+                claims: claims,
+                expires: DateTime.UtcNow.AddMinutes(30), // Token valid for 30 minutes
+                signingCredentials: credentials
+            );
+
+            return new JwtSecurityTokenHandler().WriteToken(token);
+        }
+        public string ValidateToken(string token)
+        {
+            var tokenHandler = new JwtSecurityTokenHandler();
+            var key = Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]);
+
+            try
+            {
+                var validationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuerSigningKey = true,
+                    IssuerSigningKey = new SymmetricSecurityKey(key),
+                    ValidateIssuer = false,
+                    ValidateAudience = false,
+                    ClockSkew = TimeSpan.Zero // Immediate expiration check
+                };
+
+                var principal = tokenHandler.ValidateToken(token, validationParameters, out var validatedToken);
+                var emailClaim = principal.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Email);
+                return emailClaim?.Value;
+            }
+            catch
+            {
+                return null; // Invalid or expired token
+            }
+        }
+
+
 
         internal string GenerateToken(bool user)
         {
